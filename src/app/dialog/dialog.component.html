@@ -1,0 +1,16 @@
+<div class="container">
+    <table class="table">
+        <tr>
+            <td><h5>Select {{title}}</h5></td>
+            <td></td>
+            <td><button mat-button class="close" (click)="CloseDialog()">Close</button></td>
+        </tr>
+    </table>
+        <div class="card-body buttons" *ngFor="let data of dataArray">
+            <button mat-button (click)="DialogClick(data)" ngDefaultControl>{{data}}</button>
+        </div>
+        <div class="card-body remove">
+            <button mat-button (click)="DialogClickRemoveFilter()" ngDefaultControl>Remove Filter</button>
+        </div>
+</div>
+

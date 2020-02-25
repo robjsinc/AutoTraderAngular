@@ -1,0 +1,37 @@
+.container-fluid {
+    background-color: #313C53;
+    height: 600px;
+    padding-top:20px;
+    max-height:700px;
+    overflow: hidden;
+}
+
+.container{
+    height:600px;
+    overflow: hidden;
+}
+
+.table {
+    color:white;
+    max-width:800px;
+    border: 10px solid #313C53;
+}
+
+.table td{
+    border: none;
+    color:lightgray;
+    line-height: 0.8em;
+}
+
+.white {
+    color:white !important; 
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+#bottomnavbarmenu{
+    float:right;
+    position: relative;
+    top:-535px;
+    left:830px;
+}

@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="card">
+        <p>
+            <img class="card-img-main" *ngIf="vehicle?.imgUrl" src="{{mainimg}}">
+            <span class="car-main-info">
+                <div class="mat-card display">
+                    <div class="mat-card dealer">
+                      <img class="dealer-img" src="./assets/{{vehicle.dealer.name}}.jpg">
+                          <span><h5 class="dealer-name">{{vehicle?.dealer?.name}}</h5>
+                                <p class="dealer-address">{{vehicle?.dealer?.addressLine1}}</p>
+                                <p class="dealer-address">{{vehicle?.dealer?.addressLine2}}</p>
+                                <p class="dealer-address">{{vehicle?.dealer?.city}}</p>
+
+                                <p class="dealer-address">{{vehicle?.dealer?.postCode}}</p>
+                            </span>
+                    </div>
+                        <h5 class="make">{{vehicle?.make}} {{vehicle?.model}}</h5>
+                        <h5 class="year">{{vehicle?.year}}</h5>
+                        <h5 class="car-info">{{vehicle?.version}}</h5>
+                        <h5 class="price">{{vehicle?.price | currency:'GBP':'symbol':'3.0'}}</h5> 
+   
+                        <span *ngIf="vehicle.distanceFromCustomerPostCode">
+                        <span><p class="distance">Distance</p>
+                            <p class="distance-model">{{vehicle?.distanceFromCustomerPostCode}}</p>
+                        </span>
+                    
+                        <span>
+                            <p class="time-model">{{vehicle?.timeFromCustomerPostCode}}</p>
+                            <p class="time">Travel Time</p>
+                        </span>   
+                    </span>
+     
+                                    
+     
+                        
+                        
+                </div>
+            </span> 
+        </p>
+        <div class="mat-card img-display">
+            <img class="car-img-small" *ngIf="vehicle?.imgUrl" src="./assets/{{vehicle.imgUrl}}.jpg" (click)="ChangeImg(vehicle.imgUrl)">
+            <span *ngFor="let url of vehicle.imgUrls" (click)="ChangeImg(url)">
+                <img class="car-img-small" src="./assets/{{url}}.jpg">
+            </span>
+        </div>
+        <div class="mat-card back">
+            <h5 class="card-title">
+                <a href="#" 
+                   [routerLink]="['/', backto ]" 
+                   class="card-link">Back to {{backto}} page
+                </a>
+            </h5>
+        </div>
+        <div class="card-body titles">
+            <h5 class="card-title standard">Standard Equipment</h5>
+            <h5 class="card-title engine">Engine Information</h5>
+        </div>
+        <table>
+            <tr>     
+                <div class="card-body list-left">
+                    <ul class="list-group list-group-flush" *ngFor="let equip of vehicle.standardEquipmentList">          
+                        <td class="list-group-item">{{equip}}</td>
+                    </ul> 
+                </div>
+
+                <div class="card-body list-right">
+                    <ul class="list-group list-group-flush">          
+                        <td>
+                            <li class="list-group-item">Engine - {{vehicle?.engineInfo?.engine}}</li>
+                            <li class="list-group-item">DriveTrain - {{vehicle?.engineInfo?.driveTrain}}</li>
+                            <li class="list-group-item">Power - {{vehicle?.engineInfo?.power}}</li>
+                            <li class="list-group-item">Miles Per Tank - {{vehicle?.engineInfo?.milesPerTank}}</li>
+                            <li class="list-group-item">Fuel Capacity - {{vehicle?.engineInfo?.fuelCapacity}}</li>
+                            <li class="list-group-item">Engine Size - {{vehicle?.engineInfo?.engineSizeCC}}</li>
+                            <li class="list-group-item">Cylinders - {{vehicle?.engineInfo?.cylinders}}</li>
+                            <li class="list-group-item">Valves - {{vehicle?.engineInfo?.valves}}</li>
+                            <li class="list-group-item">Gearbox - {{vehicle?.engineInfo?.gearbox}}</li>
+                            <li class="list-group-item">Fuel type - {{vehicle?.engineInfo?.fuelType}}</li>
+                            <li class="list-group-item">Transmition - {{vehicle?.engineInfo?.transmition}}</li>
+                            <li class="list-group-item">Fuel Economy - {{vehicle?.engineInfo?.fuelEconomy}}</li>
+                            <li class="list-group-item">Top Speed - {{vehicle?.engineInfo?.topSpeed}}</li>
+                            <li class="list-group-item">0- 60 - {{vehicle?.engineInfo?.zeroToSixty}}</li>
+                        </td>
+                    </ul> 
+                </div>       
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%;  }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
+
+
+.selecttt .mat-form-field-wrapper, .selectt{
+    padding:0px;
+}
+
+.mat-select-arrow{
+    visibility:hidden;
+}
+
+.mat-form-field-infix{
+    border-top:0px;
+    color:grey;
+}
+
+.mat-form-field-infix p{
+    padding-left:10px;
+}
+
+.mat-form-field-underline{
+    visibility: hidden;
+}
+
+.ng-star-inserted{
+    padding-left:5px;
+    color:grey;
+}
+
+/* #mat-select-1 .mat-select-value {  // THE VALUES INSIDE THE SLEECT BOXES ON MAIN PAGE
+    position: relative;
+    top:-5px;
+} */
+
+
+

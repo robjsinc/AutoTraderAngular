@@ -1,0 +1,111 @@
+<div class="container">
+    <div class="sidenav"> 
+        <table class="table table-one">
+            <tr>
+                <td><p class="carsfound">{{vehicleCount}} cars found</p></td>
+            </tr>
+            <tr>
+                <td class="blue"><i class="material-icons star">
+                        star
+                        </i><p class="up">Save Search</p></td>
+                <td class="blue"><i class="material-icons history">
+                        history
+                        </i><p class="up">Reset</p></td>
+            </tr>
+        </table>
+
+            <img id="searchpostcode" src="./assets/SearchPostcode.PNG">
+
+        <table class="table table-two">
+            <tr (click)="ClickMake()" (mouseover)="ChangeColorMakeIn($event)" (mouseout)="ChangeColorMakeOut($event)" #makeref>
+                <td><p class="blue make">Make</p></td>
+                <td class="right-text">{{vehicle.make}} <i class="material-icons right-icon">keyboard_arrow_right</i></td>
+            </tr>
+            <tr (click)="ClickModel()" (mouseover)="ChangeColorModelIn($event)" (mouseout)="ChangeColorModelOut($event)" #modelref>
+                <td><p class="blue model">Model</p></td>
+                <td class="right-text">{{vehicle.model}} <i class="material-icons right-icon">keyboard_arrow_right</i></td>
+            </tr>
+            <tr (click)="OpenPriceMenu()" (mouseover)="ChangeColorPriceIn($event)" (mouseout)="ChangeColorPriceOut($event)" #priceref>
+                <td><p class="blue price">Price</p></td>
+                <td><p class="right-text">{{textpreprice}} {{textminprice}} {{textpricecenter}} {{textmaxprice}}
+                        <i class="material-icons right-icon">keyboard_arrow_down</i>
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+            <span><img id="pricemenuimg" src="./assets/pricemenu.PNG"></span>
+
+        <table class="table" id="pricemenu">
+            <tr>
+                <td><p class="grey">From</p></td>
+                <td>
+                    <mat-form-field class="form-field browser-default">
+                        <mat-label>{{minpriceplaceholrder}}</mat-label>
+                    <mat-select class="selectt"  
+                                (selectionChange)="SelectMinPrice($event)" name="minpriceselect">
+                        <mat-option *ngFor="let minprice of selectminprices" [value]="minprice">
+                            {{minprice}}
+                            </mat-option>
+                        </mat-select>
+                </mat-form-field>
+                </td>
+                <p><i class="material-icons down">keyboard_arrow_down</i></p>
+            </tr>
+            <tr>
+                <td class="price-td"><p class="grey">To</p></td>
+                <td>
+                    <mat-form-field class="form-field browser-default">
+                        <mat-select class="selectt"  [placeholder]="maxpriceplaceholrder"
+                                    (selectionChange)="SelectMaxPrice($event)" name="maxpriceselect">
+                            <mat-option *ngFor="let maxprice of selectmaxprices" [value]="maxprice">
+                                {{maxprice}}
+                                </mat-option>
+                             </mat-select>
+                        </mat-form-field>
+                </td>
+                <p><i class="material-icons down">keyboard_arrow_down</i></p>
+            </tr>
+        </table>
+        <table class="table table-three">
+            <tr (click)="ClickBodyType()" (mouseover)="ChangeColorBodyTypeIn($event)" (mouseout)="ChangeColorBodyTypeOut($event)" #bodytyperef> 
+                <td><p class="blue bodytype">Body Type</p></td>
+                <td><p class="right-text">{{vehicle.bodyType}}<i class="material-icons right-icon">keyboard_arrow_right</i></p></td>
+            </tr>
+            <tr (click)="ClickInsuranceGroup()" (mouseover)="ChangeColorInsuranceGroupIn($event)" (mouseout)="ChangeColorInsuranceGroupOut($event)" #insurancegroupref> 
+                <td><p class="blue insurancegroup">Insurance Group</p></td>
+                <td><p class="right-text">{{vehicle.insuranceGroup}}<i class="material-icons right-icon">keyboard_arrow_right</i></p></td>
+            </tr>
+        </table>
+
+        <a [routerLink]="'/main'" class="button" style="height:100px;"><p>MAIN</p></a>
+    </div>
+
+    <div class="main">
+
+        <div *ngFor="let vehicle of vehicles">
+        <mat-card [routerLink]="['/vehicle', vehicle.vehicleID]" (click)="MessageToVehiclePage(vehicle)">
+                <img mat-card-image src="./assets/{{vehicle.imgUrl}}.jpg">
+            <mat-card-content>
+                <div class="textcontentheight">
+                <mat-card-title>{{vehicle.make}} {{vehicle.model}} {{vehicle.version}}</mat-card-title>
+                <p class="mat-card-p">{{vehicle.year}} | {{vehicle.bodyType}} | {{vehicle.engineInfo.engine}} | 
+                                      {{vehicle.engineInfo.power}} bhp 
+                                    </p>
+                                </div>
+                                    <span *ngFor="let url of vehicle.imgUrls">
+                                        <img class="carimages" src="./assets/{{url}}.jpg">
+                                    </span>
+            </mat-card-content>
+                <p class="mat-card-price">{{vehicle.price | currency:'GBP' :'symbol':'3.0'}}</p>
+                <p class="travel" *ngIf="vehicle.distanceFromCustomerPostCode">
+                    <span class="distance">Distance</span><br/>
+                    <span class="distancefrom">{{vehicle.distanceFromCustomerPostCode}}les</span><br/>
+                    <span class="traveltime">Travel Time</span><br/>
+                    <span class="timefrom">{{vehicle.timeFromCustomerPostCode}}</span></p>
+        </mat-card>
+        </div>
+    
+    </div>
+
+</div>

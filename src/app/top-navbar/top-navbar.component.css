@@ -1,0 +1,108 @@
+.container{
+  min-width:1340px;
+}
+
+.sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+  }
+  
+  .navbar {
+    background-color: #313C53;
+    color:white;
+    width:100%;
+    padding:0px;
+    z-index:100;
+
+  }
+
+  .navbar-top{
+    height:23px;
+    position: fixed; /* Make it stick/fixed */
+    top: 0; /* Stay on top */
+    width: 100%; /* Full width */
+    transition: top 0.5s; /* Transition effect when sliding down (and up) */
+    transition-delay: 0.2s;
+  }
+
+  .navbar-bottom{
+    height:57px;
+    position: fixed; /* Make it stick/fixed */
+    top: 23px; /* Stay on top */
+    width: 100%; /* Full width */
+    transition: top 0.5s; /* Transition effect when sliding down (and up) */
+    transition-delay: 0.2s;
+  }
+
+  .navbar ul li{
+    display: inline;
+    
+  }
+
+  .navbar ul{
+    padding: 0px;
+    margin-left:10px;
+  }
+
+  .top{
+    text-align: center;
+    padding: 0px 8px 0px 8px;    
+    font-size: 0.8em;
+  }
+
+  .bottom{
+    text-align: center;
+    padding: 0px 5px 0px 5px;    
+    font-size: 0.8em;
+    font-weight: 500;    
+  }
+
+  .navbar-brand{
+    margin-top:5px;
+  }
+
+  .border-right{
+    border-right:1px solid rgb(126, 126, 126) !important;
+    padding-right:20px;
+  }
+
+  .padding-left{
+    padding-left:20px;
+  }
+
+  .AutoTraderImg{
+    position: relative;
+    top:px;
+    left:0px;
+  }
+
+  .navbar-nav{
+    position: relative;
+    top:5px;
+    left:-120px;
+  }
+
+  .sell {
+    border-radius: 25px;
+    padding:7px 13px 7px 13px;
+    background-color: #FF4436;
+    font-weight: 600;
+    margin-right:20px;
+  }
+
+  .saved, .sign-in {
+    font-size: 0.8em;
+    position: relative;
+    top:10px;
+  }
+
+  .saved-icon, .sign-in-icon{
+    position: relative;
+  }
+
+  .saved, .sign-in{
+    position: relative;
+    right:29px;
+  }

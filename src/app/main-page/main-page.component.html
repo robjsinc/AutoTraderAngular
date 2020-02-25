@@ -1,0 +1,115 @@
+<div class="container">
+    <img class="dogimage center" src="./assets/DogImage.PNG">
+    <div id="searchbox">
+        <p id="newandused">New & used cars</p>
+        <table class="table table-top">
+          <tr>
+            <td>
+            <mat-form-field class="form-field postcode" >
+
+              <input matInput [(ngModel)]="postcode" (click)="RemovePostCodeValue()">
+            </mat-form-field>
+            </td>
+            <td>
+            <mat-form-field class="form-field float-right-top">
+              <p>{{national}}</p>
+                <mat-select class="selectt" (selectionChange)="SelectNational($event)" name="national">
+                  <mat-option class="option" *ngFor="let distance of selectnational" [value]="national">
+                    {{distance}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+            </td>
+          </tr>
+
+          <tr>
+            <td>  
+           <mat-form-field class="form-field">
+                  <mat-label>Make (any)</mat-label>  
+                <mat-select class="selectt" (selectionChange)="SelectMake($event)" name="make">
+                  <mat-option class="option" *ngFor="let make of distinctmakes" [value]="make">
+                    {{make}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+            <td>
+            <mat-form-field class="form-field float-right-top">
+              <p>{{selectmodeltitle}}</p>
+                <mat-select class="selectt" (selectionChange)="SelectModel($event)" name="model" #modelselect>
+                  <mat-option class="option" *ngFor="let model of distinctmodels" [value]="model">
+                    {{model}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+          </td>
+          </tr>
+          </table>
+
+            <img src="./assets/totalprice.PNG" id="totalprice">
+
+            <table class="table table-middle">
+              <tr>
+                <td>
+            <mat-form-field  class="form-field">
+              <mat-label class="minprice">Min price</mat-label>
+               <mat-select class="selectt" (selectionChange)="SelectMinPrice($event)" name="minpriceselect">
+                 <mat-option class="option" *ngFor="let minprice of selectminprices" [value]="minprice">
+                   {{minprice}}
+                 </mat-option>
+               </mat-select>
+            </mat-form-field>
+          </td>     
+          <td>
+       <mat-form-field class="form-field float-right">
+          <mat-label>Max price</mat-label>
+               <mat-select class="selectt" (selectionChange)="SelectMaxPrice($event)" name="maxpriceselect">
+                 <mat-option *ngFor="let maxprice of selectmaxprices" [value]="maxprice">
+                   {{maxprice}}
+                 </mat-option>
+               </mat-select>
+           </mat-form-field>
+          </td>
+          </tr>
+          </table>
+
+        <a class="searchlink" [routerLink]="'/search'"><p class="search" (click)="MessageToSearchPage()">Search {{vehiclecount}} cars</p></a>
+        <ul class="options">
+            <a href="#"><li class="reset"><i class="material-icons history">
+                history
+                </i>Reset search</li></a>
+            <a href="#"></a><li class="moreoptions">More options</li>
+        </ul>
+    </div>
+
+    <h3 id="latest">Latest brand new car deals</h3>
+    <h3 id="view">View new car deals<i class="material-icons arrow-icon"></i></h3>
+
+<div class="container container-bottom">
+
+    <div class="car-card" *ngFor="let vehicle of fourvehicles" style="width: 18rem;" [routerLink]="['/vehicle', vehicle.vehicleID]" (click)="MessageToVehiclePage()">
+            <img src="./assets/{{vehicle.imgUrl}}.jpg" class="card-img-top">
+            <div class="card-body">
+                <table class="table">
+                    <tr>
+                        <td class="RRP">RRP</td>
+                        <td></td>
+                        <td class="save">Save</td>
+                    </tr>
+                    <tr>
+                        <td class="RRP">{{vehicle.rrp | currency:'GBP' :'symbol':'3.0'}}</td>
+                        <td class="price">{{vehicle.price | currency:'GBP':'symbol':'3.0'}}</td>
+                        <td class="save-price">{{vehicle.save | currency:'GBP':'symbol':'3.0'}}</td>
+                    </tr>
+                </table>
+                <h6 class="card-title">{{vehicle.make}} {{vehicle.model}}</h6>
+                <h6 class="card-title-2">{{vehicle.version}}</h6>
+                <p class="card-info">{{vehicle.bodyType}} | {{vehicle.engineInfo.transmition}}</p>
+                <p class="card-info">{{vehicle.engineInfo.engine}}</p>
+                <p class="brand-new">BRAND NEW - IN STOCK</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>

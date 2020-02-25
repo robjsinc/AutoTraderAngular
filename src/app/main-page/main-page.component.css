@@ -1,0 +1,285 @@
+
+.container {
+    background-color: #F7F7F5;
+    max-height:900px;
+    margin-top:70px;
+    min-width:1150px;
+}
+
+.container-bottom {
+    background-color: #F7F7F5;
+    max-height:900px;
+    margin-top:30px;
+    min-width:1150px;
+
+}
+
+.dogimage {
+    margin-top:4px;
+}
+
+#searchbox {
+    background-color: white;
+    height:353px;
+    width:345px;
+    border-radius: 4px;
+    position: relative;
+    top:-361px;
+    left:50px;    
+    padding:10px 15px;
+    background-color: #FFFFFF;
+}
+
+#newandused {
+    font-size: 1.5em;
+    padding: 0px 0px 0px 0px;
+    font-weight:500;
+}
+
+#latest {
+    position: relative;
+    top:-320px;
+    left:50px;
+    font-size: 1.6em;
+}
+
+#view {
+    color:red;
+    position: relative;
+    top:-360px;
+    left:900px;
+    font-size: 1em;
+}
+
+.arrow-icon {
+    position: relative;
+    top:6px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 92%;
+  }
+
+  .car-card {
+      position: relative;
+      top:-345px;
+      display: inline-block;
+      max-width:250px;
+      margin: 0px 10px 10px 10px;
+  }
+
+  .car-card:hover {
+      cursor: pointer;
+  }
+
+  .card-body {
+      max-height:200px;
+      overflow: hidden;
+      background-color: white;
+      border-radius: 3px;
+      
+  }
+
+  .card-info{
+    font-size: 0.8em;   
+    line-height: 0.8em; 
+  }
+
+  .card-title {
+      font-size: 1em;
+      margin-top:-10px;
+      height:15px;
+      overflow: hidden;
+  }
+
+  .card-title-2{
+      font-size: 0.9em;
+      margin-top:2px;
+      margin-bottom:15px;
+      height:15px;
+      overflow: hidden;
+  }
+
+  .RRP {
+      font-size: 0.8em;
+      text-decoration: line-through;
+      color:grey;
+      text-align: left;
+  }
+
+  .save {
+      font-size: 0.8em;
+      color: #06A09D;
+      font-weight: 600;
+      text-align: left;
+  }
+
+  .price {
+    color:red;
+    font-size: 0.9em;
+    font-weight:600;
+    text-align: center
+  }
+
+  .save-price{
+    font-size: 0.8em;
+    background-color: #06A09D;
+    font-weight: 600;
+    text-align: left;
+    color:white;
+  }
+
+  .brand-new {
+      color: #06A09D;
+      font-size: 0.75em;
+      font-weight: 600;
+  }
+
+  .table {
+      margin-top:-15px;
+      position: relative;
+      left:-12px;      
+  }
+
+  .table td {
+      border:none;
+  }
+
+  .table tr {
+      line-height:1px;
+  }
+
+  .search {
+    border-radius: 25px;
+    padding:7px 13px 7px 13px;
+    background-color: #FF4436;
+    font-weight: 500;
+    margin-right:20px;
+    color:white;
+    text-align: center;
+    width:100%;
+    position: relative;
+    top:-60px;
+  }
+
+.searchlink {
+    position: relative;
+    top:100px;
+}
+
+.options {
+    position: relative;
+    top:100px;
+}
+
+  .searchlink:hover {
+      text-decoration: none;
+  }
+
+  #searchbox ul li{
+      display: inline-block;
+      color:#2A65BA;
+      font-size: 0.9em;
+      font-weight: 500;
+  }
+
+  .reset{
+      position: relative;
+      top:-70px;
+      left:-28px;
+  }
+
+  .history {
+    font-size: 1.1em;
+    position: relative;
+    top:3px;
+  }
+
+  .moreoptions {
+    position: relative;
+    top:-70px;
+    left:80px;
+  }
+  
+  .form-field{
+      width:75%;
+      background-color: #E8E8E3;
+      height:31px;
+      border-radius: 5px;
+      overflow: hidden;
+  }
+
+  .title{
+      position: relative;
+      top:-18px;
+      left:10px;
+      font-size: 0.9em;
+  }
+
+  .down{
+      color:red;
+      font-size: 1.3em; 
+  }
+
+  #postcode {
+      width:106%;
+      height:53px;
+      position: relative;
+      left:-10px;
+      top:-18px;
+  }
+
+  #totalprice {
+      position: relative;
+      top:5px;
+  }
+
+  .table-top{    
+      position: relative;
+      top:-5px;  
+      margin:0px;
+      margin-left:12px;
+  }
+
+  .table-top tr td{
+    padding:0px;
+    max-width:157px;
+  }
+ 
+  .table-middle{    
+    position: relative;
+    top:20px;  
+    margin:0px;
+    margin-left:12px;
+}
+
+.table-middle tr td{
+  padding:0px;
+  max-width:157px;
+}
+
+  .mat-form-field{
+      width:150px;
+  }
+
+  .minprice{
+      color:grey;
+  }
+
+  .postcode{
+    width:150px;
+    background-color: #E8E8E3;
+    height:31px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    padding-left:10px;
+  }
+
+  .float-right-top{
+    position: relative;
+    right:-10px;
+  }

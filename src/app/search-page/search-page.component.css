@@ -1,0 +1,231 @@
+.container {
+   min-height:1000px;
+   max-height:3500px;
+   margin-top:70px;
+}
+
+.sidenav {
+    height:550px;
+    width:220px;
+    background-color: white;
+    border:1px solid rgb(226, 226, 226);
+    margin-top:0px;
+}
+
+.table {
+    font-family: 'Open Sans', sans-serif;
+    line-height:10px;
+    font-size:0.8em;
+}
+
+.table-one tr td{
+    border: none;    
+}
+
+.table-one{
+    border-bottom:1px solid  rgb(226, 226, 226);  
+}
+
+.table tr td {
+    padding:0px;
+    line-height: 30px;
+}
+
+.carsfound {
+    font-size: 1.3em;
+    font-weight: 700;
+    text-align: right;
+    width:100%;   
+    border-top:0px; 
+    margin:7px 0px 0px 10px;    
+}
+
+.star{
+    margin-top:6px;
+    font-size: 20px;
+    margin-left:7px;
+}
+
+.history {
+    margin-top:6px;
+    font-size: 20px;
+}
+
+#searchpostcode{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:-15px
+}
+
+.blue {
+    font-weight:500;
+}
+
+.grey{
+    color:grey;
+    padding-left:10px;
+    max-height:10px;
+    padding-right:30px;
+}
+
+.right-icon {
+    padding:0px;
+    color: #2A65BA;
+    float:right;
+    padding-top:3px;
+    padding-right:2px;
+}
+
+.right-text {
+    text-align: right;
+    margin-bottom:0px;
+}
+
+.make,.model, .price, .bodytype, .insurancegroup {
+    padding-left:10px;
+    max-height:10px;
+}
+
+.table-two tr:hover,.table-three tr:hover {
+    cursor: pointer;
+}
+
+.up{
+    display: inline;
+    position: relative;
+    top:-5px;
+    left:2px;
+}
+
+#pricemenu{
+    display: block;
+    border:none;
+}
+
+#pricemenu tr td{    
+    border:none;
+}
+
+#pricemenuimg{
+    position: relative;
+    top:-10px;
+    left:10px;
+    display: block;
+}
+
+.browser-default {
+    height:28px;
+    overflow: hidden;
+    border:1px solid rgb(226, 226, 226);  
+    width:130px;
+}
+
+.price-td {
+    max-width:50px;
+}
+
+.down{
+    color:red;
+    position: relative;
+    top:3px;
+    left:-25px;
+    font-size: 1.7em; 
+}
+
+.main {
+    width: 685px;
+    height:100%;
+    position: relative;
+    top: -550px;
+    left:300px;
+}
+
+.mat-card{
+    width:680px;
+    height:150px;
+    margin-bottom:20px;
+    text-decoration: none;
+}
+
+.mat-card:hover {
+    cursor: pointer;
+}
+
+
+.mat-card-image{
+    height:150px;
+    width:225px;
+}
+
+.mat-card-title{
+    font-size: 1em;
+    color: #2A65BA;
+    padding-right:5px;
+}
+
+.mat-card-content{
+    width:300px;
+    height:120px;
+    border-right:1px solid rgb(226, 226, 226);  
+    position: relative;
+    top:-160px;
+    left:230px;
+}
+
+.mat-card-p{
+    font-size: 0.9em;
+    margin-bottom:4px;
+}
+
+.mat-card-price{
+    position: relative;
+    left:550px;
+    top:-285px;
+    font-weight: 500;
+    width:100px;
+    text-align: center;
+    padding-bottom:5px;
+    border-bottom: 1px solid rgb(226, 226, 226); 
+}
+
+.carimages{
+    height:55px;
+    padding-right:10px;
+}
+
+.textcontentheight{
+    min-height:80px;
+}
+
+.travel{
+    position: relative;
+    left:550px;
+    top:-290px;
+    color:black;
+    font-size: 0.8em;
+    width:105px;
+}
+
+.distance{
+    background-color: rgb(75, 121, 185);
+    border-radius: 2px;
+    padding: 2px 5px 2px 5px;
+    color:lightgrey;
+}
+.traveltime{
+    background-color: rgb(75, 121, 185);
+    border-radius: 2px;
+    padding: 2px 5px 2px 5px;
+    color:lightgrey;
+}
+
+.timefrom{
+    padding-left:5px;
+    color:grey;
+}
+
+.distancefrom{
+    padding-left:5px;
+    color:grey;
+}

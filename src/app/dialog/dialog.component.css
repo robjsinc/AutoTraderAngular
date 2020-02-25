@@ -1,0 +1,48 @@
+.container {
+    width:500px;
+    height:400px;
+}
+
+.table{
+    max-width:460px;
+    border-bottom:1px solid rgb(226, 226, 226); 
+}
+
+.table tr td {
+    border:none;
+    width:130px;
+    max-width: 130px !important;
+}
+
+.selectmake{
+    text-align: left;
+}
+
+.buttons{
+    width:150px;
+    display: inline-block;
+    line-height:5px;
+    height:15px;
+    font-size:0.9em;
+    color:#2A65BA;
+    text-align: left;
+}
+
+.remove {
+    width:150px;
+    display: inline-block;
+    line-height:5px;
+    height:15px;
+    font-size:0.9em;
+    color:#2A65BA;
+    text-align: left;
+    position: relative;
+    left:-15px;
+    top:130px;
+}
+
+.close{
+    color:#2A65BA;
+    float: right;
+    font-size: 0.9em;
+}

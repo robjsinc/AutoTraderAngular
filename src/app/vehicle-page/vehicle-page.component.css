@@ -1,0 +1,197 @@
+.container {
+    min-width:1150px;
+    margin-top:100px;
+}
+
+.card {
+    width:100%;
+    margin-bottom:40px;
+}
+
+.card-body {
+    padding:0px 0px 0px 20px;
+}
+
+.card-img-main {
+    width:50%;
+    float:left;
+    margin:20px 20px 0px 20px;
+    border: 1px solid lightgray;
+    border-radius:5px;
+}
+
+.car-img-small {
+    height:70px;
+    float: left;   
+    cursor: pointer;
+    margin: 0px 10px 0px 10px;
+    height:50px;
+    border-radius: 4px;
+}
+
+.make {
+    margin-top:20px;
+    color: #2A65BA;
+    font-size: 1.7em;
+    margin-left:10px;
+}
+
+.year {
+    color: grey;
+    font-size: 1em;
+    margin-left:10px;
+}
+
+.car-info {
+    color: grey;
+    font-size: 1em;
+    margin-bottom:10px;    
+    margin-left:10px;
+}
+
+.price {
+  color:grey;
+  font-size: 2em;
+  font-weight:500;
+  text-align: left;
+  margin-left:10px;
+  margin-top:25px;
+}
+
+.titles {
+    margin-top:-30px;
+}
+
+.back {
+    position:relative;
+    top:-70px;
+    left:600px;
+    height:70px;
+    font-size: 1.5em;
+    width:500px;
+    padding:20px 20px 20px 280px;
+}
+
+.standard {
+    float:left;
+    margin-left:20px;
+    font-size: 1.5em;
+    color: #2A65BA;
+}
+
+.engine {
+    float:right;
+    margin-left:20px;
+    font-size: 1.5em;
+    color: #2A65BA;
+    margin-right:280px;
+}
+
+.list-left {
+    width:45%;
+    float:left;
+    color:grey;
+}
+
+.list-right {
+    width:45%;
+    float:right;
+    margin-right:20px;
+    color:grey;
+}
+
+.list-group-item {
+    padding:2px 0px 2px 20px;
+}
+
+.display{
+    width:495px;
+    float:right;
+    margin:20px 20px 0px 0px;
+    padding:20px;
+    height:372px;
+}
+
+.img-display{
+    width:560px;
+    margin-left:20px;
+    padding:10px 0px 10px 10px;
+    height:70px;
+}
+
+.dealer{
+    height:100px;
+    padding:0px;
+}
+
+.dealer-img{
+    height:100px;
+    float:right;
+    max-width:200px;
+}
+
+.dealer-name{
+    color: #2A65BA;
+    display: inline;
+    margin-left: 10px;
+}
+
+.dealer-address{
+    margin-top:10px;
+    line-height: 0.1;
+    margin-left:10px;
+}
+
+.distance{
+    background-color: #2A65BA;
+    border-left: 3px solid #2A65BA;
+    border-top: 3px solid #2A65BA;
+    border-bottom: 3px solid #2A65BA;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    display: inline-block;
+    padding:4px;
+    padding-right:8px;
+    color:white;
+    margin-top:5px;
+}
+
+.distance-model{
+    display: inline-block;
+    border-right: 3px solid #2A65BA;
+    border-top: 3px solid #2A65BA;
+    border-bottom: 3px solid #2A65BA;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding:4px;
+    color:grey;
+    margin-top:5px;
+}
+
+.time{
+    background-color: #2A65BA;
+    border-left: 3px solid #2A65BA;
+    border-top: 3px solid #2A65BA;
+    border-bottom: 3px solid #2A65BA;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    display: inline-block;
+    padding:4px;
+    color:white;
+    float:right;
+    margin-top:5px;
+    padding-right:8px;
+}
+
+.time-model{
+    display: inline-block;
+    border-right: 3px solid #2A65BA;
+    border-top: 3px solid #2A65BA;
+    border-bottom: 3px solid #2A65BA;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding:4px;
+    color:grey;
+    float:right;
+    margin-top:5px;
+}
