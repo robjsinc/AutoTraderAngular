@@ -10,8 +10,8 @@
     background-color: #F7F7F5;
     max-height:900px;
     margin-top:30px;
-    min-width:1150px;
-
+    min-width:1130px;
+    padding-left:30px;
 }
 
 .dogimage {
@@ -39,14 +39,14 @@
 #latest {
     position: relative;
     top:-320px;
-    left:50px;
+    left:70px;
     font-size: 1.6em;
 }
 
 #view {
     color:red;
     position: relative;
-    top:-360px;
+    top:-350px;
     left:900px;
     font-size: 1em;
 }
@@ -67,7 +67,7 @@
       position: relative;
       top:-345px;
       display: inline-block;
-      max-width:250px;
+      max-width:243px;
       margin: 0px 10px 10px 10px;
   }
 

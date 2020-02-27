@@ -6,15 +6,14 @@
           <tr>
             <td>
             <mat-form-field class="form-field postcode" >
-
-              <input matInput [(ngModel)]="postcode" (click)="RemovePostCodeValue()">
+              <input matInput [(ngModel)]="postcode" (click)="RemovePostCodeValue()" (focusout)="AddPostCodeValue(postcode)">
             </mat-form-field>
             </td>
             <td>
             <mat-form-field class="form-field float-right-top">
-              <p>{{national}}</p>
-                <mat-select class="selectt" (selectionChange)="SelectNational($event)" name="national">
-                  <mat-option class="option" *ngFor="let distance of selectnational" [value]="national">
+              <mat-label>National</mat-label>  
+                <mat-select class="selectt" (selectionChange)="SelectNational($event)" name="distance">
+                  <mat-option class="option" *ngFor="let distance of selectnational" [value]="distance">
                     {{distance}}
                   </mat-option>
                 </mat-select>
@@ -35,7 +34,7 @@
             </td>
             <td>
             <mat-form-field class="form-field float-right-top">
-              <p>{{selectmodeltitle}}</p>
+              <p>Model (any)</p>
                 <mat-select class="selectt" (selectionChange)="SelectModel($event)" name="model" #modelselect>
                   <mat-option class="option" *ngFor="let model of distinctmodels" [value]="model">
                     {{model}}

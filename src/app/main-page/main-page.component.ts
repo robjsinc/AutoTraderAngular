@@ -14,9 +14,9 @@ import { ConstantsServiceComponent } from '../constants-service/constants-servic
 export class MainPageComponent implements OnInit {
 
   constructor(private http: HttpClient, 
-                      private data: DataServiceComponent,
-                      private router: Router,
-                      private constant: ConstantsServiceComponent) { }
+              private data: DataServiceComponent,
+              private router: Router,
+              private constant: ConstantsServiceComponent) { }
 
   [x: string]: any;
   vehicles = [];
@@ -69,11 +69,11 @@ export class MainPageComponent implements OnInit {
   ];
   selectmodeltitle:string = "Model (any)";
   postcode:string = "Post Code";
-  national:string = "National";
+  distance:string;
   formGroup:FormGroup;
   message:string;
 
-   @ViewChild('modelselect', {static: false}) modelselect: MainPageComponent;
+  @ViewChild('modelselect', {static: false}) modelselect: MainPageComponent;
 
   ngOnInit() {
     this.baseAppUrl = this.constant.baseAppUrl;
@@ -111,7 +111,17 @@ export class MainPageComponent implements OnInit {
     }
     this.data.changeMessage(this.selectedmake + " " + this.selectedmodel + " " +
                             this.selectedminprice + " " + this.selectedmaxprice + 
-                            " " + "null" + " " + "null" + " " + this.CheckPostCodeValue());
+                            " " + "null" + " " + "null" + " " + 
+                            this.CheckPostCodeValue() + " " + this.distance);
+  }
+
+  SelectNational(event: any){    
+    if(event.value.length > 9){
+      this.distance = event.value.substr(7,3);
+      this.distance = this.distance.trimRight();
+    }else{
+      this.distance = event.value;
+    }
   }
 
   CheckPostCodeValue(){
@@ -245,7 +255,8 @@ export class MainPageComponent implements OnInit {
   GetVehiclesFilteredByMinAndMaxPrice(vehicles: Vehicle[]){
       let data = [];
       for(var i = 0; i < vehicles.length; i++){
-        if(this.RemoveCommaFromPrice(vehicles[i].price) > this.selectedminprice && this.RemoveCommaFromPrice(vehicles[i].price) < this.selectedmaxprice){
+        if(this.RemoveCommaFromPrice(vehicles[i].price) > this.selectedminprice && 
+           this.RemoveCommaFromPrice(vehicles[i].price) < this.selectedmaxprice){
            data.push(vehicles[i]);
          }
       }
@@ -338,6 +349,12 @@ export class MainPageComponent implements OnInit {
 
   RemovePostCodeValue(){
     this.postcode = "";
+  }
+
+  AddPostCodeValue(postcode){
+    if(postcode === "" || postcode === undefined){
+      this.postcode = "Post Code";
+    }
   }
 }
 

@@ -1,6 +1,6 @@
 .container {
-   min-height:1000px;
-   max-height:3500px;
+
+
    margin-top:70px;
 }
 
@@ -10,6 +10,8 @@
     background-color: white;
     border:1px solid rgb(226, 226, 226);
     margin-top:0px;
+    float:left;
+    margin-bottom:20px;
 }
 
 .table {
@@ -53,8 +55,6 @@
 
 #searchpostcode{
     display: block;
-    margin-left: auto;
-    margin-right: auto;
     margin-top:-15px
 }
 
@@ -135,10 +135,9 @@
 
 .main {
     width: 685px;
-    height:100%;
     position: relative;
-    top: -550px;
-    left:300px;
+    float:right;
+    left:-150px;
 }
 
 .mat-card{
@@ -212,12 +211,16 @@
     border-radius: 2px;
     padding: 2px 5px 2px 5px;
     color:lightgrey;
+    width:92px;
+    display: inline-block;
 }
 .traveltime{
     background-color: rgb(75, 121, 185);
     border-radius: 2px;
     padding: 2px 5px 2px 5px;
     color:lightgrey;
+    width:92px;
+    display: inline-block;
 }
 
 .timefrom{
