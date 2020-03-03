@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { HttpClient, HttpHeaders  } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpParams  } from "@angular/common/http";
 import { DataServiceComponent } from '../data-service/data-service.component';
 import { Router, NavigationEnd } from '@angular/router';
 import { FormGroup } from '@angular/forms';
@@ -66,14 +66,15 @@ export class MainPageComponent implements OnInit {
     "Within 160 miles",
     "Within 180 miles",
     "National"
-  ];
-  selectmodeltitle:string = "Model (any)";
+  ];  
   postcode:string = "Post Code";
-  distance:string;
+  distance:string = "National";
   formGroup:FormGroup;
   message:string;
+  baseAppUrl
 
   @ViewChild('modelselect', {static: false}) modelselect: MainPageComponent;
+  @ViewChild('makeselect', {static: false}) makeselect: MainPageComponent;
 
   ngOnInit() {
     this.baseAppUrl = this.constant.baseAppUrl;
@@ -115,12 +116,52 @@ export class MainPageComponent implements OnInit {
                             this.CheckPostCodeValue() + " " + this.distance);
   }
 
-  SelectNational(event: any){    
+  GetParams(){
+    return new HttpParams().set('make',this.CheckParamValue(this.selectedmake))
+                            .set('model',this.CheckParamValue(this.selectedmodel))
+                            .set('minprice',this.selectedminprice.toString())
+                            .set('maxprice',this.selectedmaxprice.toString())
+                            .set('bodytype', "Any")
+                            .set('insurancegroup', "Any")
+                            .set('postcode', this.postcode)
+                            .set('distance', this.distance);
+  }
+
+  SelectNational(event: any){
     if(event.value.length > 9){
       this.distance = event.value.substr(7,3);
       this.distance = this.distance.trimRight();
     }else{
       this.distance = event.value;
+    }
+
+    if(!isNaN(parseInt(this.distance)) && this.postcode != "Post Code"){
+        const params = this.GetParams();
+        this.http.get(this.baseAppUrl + "vehicle/GetBySelectedInfo", { params }).subscribe((data: Vehicle[])=> {
+        this.GetVehicleCount(data);
+        this.GetDistinctMakes(data);
+        this.vehicles = data;
+        this.SetModelDataOnNationalSelect(data);
+        this.filteredvehicles = data;
+      })
+    }
+    //need to set it up when the national sellect is changed back to national from a distance
+  }
+
+  SetModelDataOnNationalSelect(vehicles) {
+    if(this.selectedmake == "") {
+      this.GetDistinctMakes(vehicles);
+    }else {
+      this.GetDistinctMakes(vehicles);
+      this.GetDistinctModelsByMake(this.selectedmake);
+    }
+  }
+
+  CheckParamValue(value){
+    if(value === undefined || value === null || value === ""){
+     return value = "Any";
+    }else{
+      return value;
     }
   }
 

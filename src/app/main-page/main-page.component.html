@@ -25,7 +25,7 @@
             <td>  
            <mat-form-field class="form-field">
                   <mat-label>Make (any)</mat-label>  
-                <mat-select class="selectt" (selectionChange)="SelectMake($event)" name="make">
+                <mat-select class="selectt" (selectionChange)="SelectMake($event)" name="make" #makeselect>
                   <mat-option class="option" *ngFor="let make of distinctmakes" [value]="make">
                     {{make}}
                   </mat-option>
@@ -34,7 +34,7 @@
             </td>
             <td>
             <mat-form-field class="form-field float-right-top">
-              <p>Model (any)</p>
+              <mat-label>Model (any)</mat-label>
                 <mat-select class="selectt" (selectionChange)="SelectModel($event)" name="model" #modelselect>
                   <mat-option class="option" *ngFor="let model of distinctmodels" [value]="model">
                     {{model}}
