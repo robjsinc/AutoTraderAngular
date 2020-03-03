@@ -14,9 +14,9 @@ import { ConstantsServiceComponent } from '../constants-service/constants-servic
 export class MainPageComponent implements OnInit {
 
   constructor(private http: HttpClient, 
-                      private data: DataServiceComponent,
-                      private router: Router,
-                      private constant: ConstantsServiceComponent) { }
+              private data: DataServiceComponent,
+              private router: Router,
+              private constant: ConstantsServiceComponent) { }
 
   [x: string]: any;
   vehicles = [];
@@ -69,7 +69,7 @@ export class MainPageComponent implements OnInit {
   ];
   selectmodeltitle:string = "Model (any)";
   postcode:string = "Post Code";
-  national:string = "National";
+  distance:string = "National";
   formGroup:FormGroup;
   message:string;
 
