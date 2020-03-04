@@ -209,6 +209,8 @@
     border-radius: 2px;
     padding: 2px 5px 2px 5px;
     color:lightgrey;
+    width:92px;
+    display: inline-block;
 }
 .traveltime{
     background-color: rgb(75, 121, 185);

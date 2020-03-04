@@ -117,7 +117,7 @@ export class SearchPageComponent implements OnInit   {
 }
 
   GetVehiclesBySelectedInfo(){
-      this.ChangeUndefinedValuesToAny();    
+      this.ChangeUndefinedValuesToAny();
       const params = this.GetParams();
       this.SetSettings(this.GetVehicleInfo());
       this.http.get(this.baseAppUrl + "vehicle/GetBySelectedInfo", { params }).subscribe((data: VehicleModel[])=> {
@@ -176,7 +176,7 @@ export class SearchPageComponent implements OnInit   {
     this.data.changeMessage(this.vehicle.make +" "+ this.vehicle.model +" "+ this.vehicle.minprice +" "+  
                             this.vehicle.maxprice +" "+ this.vehicle.bodyType +" "+ this.vehicle.insuranceGroup + " " + 
                             this.vehicle.postcode + " (" + vehicle.distanceFromCustomerPostCode + ") (" + 
-                            vehicle.timeFromCustomerPostCode + ")");
+                            vehicle.timeFromCustomerPostCode + ")"); //Why did I do this - just pass in the vehicle - refactor all this!!
   }
 
   GetVehicleInfo(){

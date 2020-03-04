@@ -55,23 +55,24 @@ export class MainPageComponent implements OnInit {
     'To £55,000',
     'To £60,000'
   ];
-  selectnational = [
-    "Within 20 miles",
-    "Within 40 miles",
-    "Within 60 miles",
-    "Within 80 miles",
-    "Within 100 miles",
-    "Within 120 miles",
-    "Within 140 miles",
-    "Within 160 miles",
-    "Within 180 miles",
-    "National"
-  ];
+  // selectnational = [
+  //   "Within 20 miles",
+  //   "Within 40 miles",
+  //   "Within 60 miles",
+  //   "Within 80 miles",
+  //   "Within 100 miles",
+  //   "Within 120 miles",
+  //   "Within 140 miles",
+  //   "Within 160 miles",
+  //   "Within 180 miles",
+  //   "National"
+  // ];
   selectmodeltitle:string = "Model (any)";
   postcode:string = "Post Code";
   distance:string = "National";
   formGroup:FormGroup;
   message:string;
+  baseAppUrl:string;
 
    @ViewChild('modelselect', {static: false}) modelselect: MainPageComponent;
 
@@ -118,7 +119,7 @@ export class MainPageComponent implements OnInit {
     if(this.postcode === "Post Code"){
       this.postcode = "null";
     }
-    return this.postcode;
+    return this.postcode.replace(" ","");
   }
 
   MessageToVehiclePage(){
