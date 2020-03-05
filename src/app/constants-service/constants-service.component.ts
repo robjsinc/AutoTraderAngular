@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ConstantsServiceComponent implements OnInit {
 
   readonly baseAppUrl: string = 'https://localhost:44388/';
-  // readonly baseAppUrl: string = '';
+  //readonly baseAppUrl: string = 'https://at-api-webapp.azurewebsites.net/';
 
   constructor() { }
 

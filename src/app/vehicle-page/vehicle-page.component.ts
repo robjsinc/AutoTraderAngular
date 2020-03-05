@@ -83,7 +83,7 @@ import { ConstantsServiceComponent } from '../constants-service/constants-servic
   }
 
   ChangeImg(imgurl) {
-    this.mainimg = "./assets/" +  imgurl + ".jpg";
+    this.mainimg = imgurl;
   }  
 
   GetMainImg(){

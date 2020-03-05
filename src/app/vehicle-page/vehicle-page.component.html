@@ -1,23 +1,22 @@
 <div class="container">
     <div class="card">
         <p>
-            <img class="card-img-main" *ngIf="vehicle?.imgUrl" src="{{mainimg}}">
+            <img class="card-img-main" *ngIf="vehicle.images[3]?.imagePath" src="{{mainimg}}">
             <span class="car-main-info">
                 <div class="mat-card display">
                     <div class="mat-card dealer">
-                      <img class="dealer-img" src="./assets/{{vehicle.dealer.name}}.jpg">
+                      <img class="dealer-img" src="./assets/{{vehicle.dealer?.name}}.jpg">
                           <span><h5 class="dealer-name">{{vehicle?.dealer?.name}}</h5>
                                 <p class="dealer-address">{{vehicle?.dealer?.addressLine1}}</p>
                                 <p class="dealer-address">{{vehicle?.dealer?.addressLine2}}</p>
                                 <p class="dealer-address">{{vehicle?.dealer?.city}}</p>
-
                                 <p class="dealer-address">{{vehicle?.dealer?.postCode}}</p>
                             </span>
                     </div>
                         <h5 class="make">{{vehicle?.make}} {{vehicle?.model}}</h5>
                         <h5 class="year">{{vehicle?.year}}</h5>
                         <h5 class="car-info">{{vehicle?.version}}</h5>
-                        <h5 class="price">{{vehicle?.price | currency:'GBP':'symbol':'3.0'}}</h5> 
+                        <h5 class="price">{{vehicle?.price | currency:'GBP':'symbol':'3.0'}}</h5>
    
                         <span *ngIf="vehicle.distanceFromCustomerPostCode">
                         <span><p class="distance">Distance</p>
@@ -27,20 +26,14 @@
                         <span>
                             <p class="time-model">{{vehicle?.timeFromCustomerPostCode}}</p>
                             <p class="time">Travel Time</p>
-                        </span>   
+                        </span>
                     </span>
-     
-                                    
-     
-                        
-                        
                 </div>
             </span> 
         </p>
         <div class="mat-card img-display">
-            <img class="car-img-small" *ngIf="vehicle?.imgUrl" src="./assets/{{vehicle.imgUrl}}.jpg" (click)="ChangeImg(vehicle.imgUrl)">
-            <span *ngFor="let url of vehicle.imgUrls" (click)="ChangeImg(url)">
-                <img class="car-img-small" src="./assets/{{url}}.jpg">
+            <span *ngFor="let url of vehicle.images" (click)="ChangeImg(url.imagePath)">
+                <img class="car-img-small" src="{{url.imagePath}}">
             </span>
         </div>
         <div class="mat-card back">

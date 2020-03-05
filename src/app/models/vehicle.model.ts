@@ -1,4 +1,5 @@
 import { EngineInfoModel } from './engineinfo.model';
+import { ImagesModel } from './images.model';
 
 export class VehicleModel {
   vehicleID: number;
@@ -23,4 +24,5 @@ export class VehicleModel {
   postcode:string;
   distanceFromCustomerPostCode:string;
   timeFromCustomerPostCode:string;
+  images: ImagesModel;
 }
