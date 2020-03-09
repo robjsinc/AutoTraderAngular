@@ -3,11 +3,13 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { VehiclePageComponent } from './vehicle-page/vehicle-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 const appRoutes: Routes = [
   { path: 'vehicle/:vehicleID', component: VehiclePageComponent },
   { path: 'search', component: SearchPageComponent },
   { path: 'main', component: MainPageComponent },
+  { path: 'login', component: LoginPageComponent },
   { path: '', redirectTo: '/main', pathMatch: 'full' }
 ];
 

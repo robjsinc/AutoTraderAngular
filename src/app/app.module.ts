@@ -19,7 +19,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { VehiclePageComponent } from './vehicle-page/vehicle-page.component';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule  } from '@angular/forms';
-import { ConstantsServiceComponent } from './constants-service/constants-service.component'
+import { ConstantsServiceComponent } from './constants-service/constants-service.component';
+import { LoginPageComponent } from './login-page/login-page.component'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ConstantsServiceComponent } from './constants-service/constants-service
     SearchPageComponent,
     DataServiceComponent,
     DialogComponent,
-    VehiclePageComponent
+    VehiclePageComponent,
+    LoginPageComponent
   ],
   entryComponents: [
     DialogComponent

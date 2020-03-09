@@ -1,0 +1,38 @@
+.container{
+    margin-top:100px;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 50%;
+    margin:0 auto;
+    padding-bottom:50px;
+  }
+  
+  .example-full-width {
+    width: 100%;
+    padding-top:20px;
+  }
+
+  .mat-input-element{
+      border-bottom: 1px solid grey;
+      padding-bottom:3px;
+  }
+
+  .sign-in {    
+    border-radius: 25px;
+    padding:7px 13px 7px 13px;
+    background-color: #FF4436;
+    font-weight: 600;
+    margin: 0 auto;
+    max-width: 500px;
+    margin-bottom:200px;
+    max-height:40px;
+}
+
+.sign-in-p{
+    color:white;
+    padding-top:3px;
+    padding-left:210px;
+}
