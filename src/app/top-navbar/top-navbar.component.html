@@ -3,7 +3,7 @@
 <nav class="navbar navbar-top" id="navbar-top-id">  
   <div class="container">
     <ul>
-      <li class="top navbar-item">Cars</li>
+      <li class="top navbar-item cars">Cars</li>
       <li class="top navbar-item">Prestige cars</li>
       <li class="top navbar-item">Vans</li>
       <li class="top navbar-item">Bikes</li>
@@ -23,8 +23,8 @@
     [class.sticky] = "sticky">
     <div class="container">
     <div class="navbar-brand">
-        <ul>
-        <li><span class="AutoTraderImg"><img src="./assets/AutoTrader.PNG"></span></li>
+      <ul>
+        <li><span class="AutoTraderImg"><a [routerLink]="'/main'"><img src="./assets/AutoTrader.PNG"></a></span></li>
         <li class="bottom navbar-item border-right padding-left">Buying new & used</li>
         <li class="bottom navbar-item border-right padding-left">Sell your car</li>
         <li class="bottom navbar-item border-right padding-left">Value your car</li>

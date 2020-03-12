@@ -100,9 +100,17 @@
 
   .saved-icon, .sign-in-icon{
     position: relative;
+    color:white;
+    text-decoration: none;
   }
 
   .saved, .sign-in{
     position: relative;
     right:29px;
+    color:white;
+    text-decoration: none;
+  }
+
+  .cars {
+    color:turquoise;
   }

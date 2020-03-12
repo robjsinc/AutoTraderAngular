@@ -73,11 +73,15 @@ export class MainPageComponent implements OnInit {
   formGroup:FormGroup;
   message:string;
   baseAppUrl:string;
+  token:string = "token";
 
    @ViewChild('modelselect', {static: false}) modelselect: MainPageComponent;
 
   ngOnInit() {
     this.baseAppUrl = this.constant.baseAppUrl;
+    this.data.currentMessage.subscribe(message => this.message = message);
+    let splittoken = this.message.split(":");
+    this.token = splittoken[1];
 
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
@@ -86,13 +90,15 @@ export class MainPageComponent implements OnInit {
       window.scrollTo(0, 0)
   });
 
+    let headers_object = new HttpHeaders();
+    headers_object = headers_object.append('Authorization', this.token );
+    headers_object = headers_object.append('Content-Type',  'application/json');
+
     const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        'Authorization': 'my-auth-token'
-      })
+      headers: headers_object
     };
-    this.http.get(this.baseAppUrl + "vehicle", httpOptions).subscribe((data: Vehicle[])=> {
+
+    this.http.get(this.baseAppUrl + "vehicle/", httpOptions).subscribe((data: Vehicle[])=> {
       this.GetFourVehicles(data);
       this.GetVehicleCount(data);
       this.GetDistinctMakes(data);
@@ -100,7 +106,6 @@ export class MainPageComponent implements OnInit {
       this.RemoveWhiteSpaceForImg(this.fourvehicles);
       this.vehicles = data;
     });
-    this.data.currentMessage.subscribe(message => this.message = message)
   }
 
   MessageToSearchPage() {
